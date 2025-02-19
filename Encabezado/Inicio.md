@@ -1,4 +1,4 @@
-<img src="Imagenes" width = 70 height = 70 align =  right figclass= margin-caption >  <img src="Imagenes\UCE.jpg" 
+<img src="Imagenes/descarga (1).jpg" width = 70 height = 70 align =  right figclass= margin-caption >  <img src="Imagenes\UCE.jpg" 
 width = 70 height =70 align = left figclass= margin-caption >
 
 #### <center> <span style='color:red'>  *Universiad Central del Ecuador* </span>
