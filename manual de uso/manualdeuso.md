@@ -1,8 +1,7 @@
 # **Manual de Usuario - Brazo Robótico Cartesiano**
 
-## 📷 Colocar una foto del brazo acabado aquí
+## <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/42fed2d5a2a253646c96f221bb2d667fc43dafab/Imagenes/barzo%20completo.jpg" width = 300 height = 300 align =  midle figclass= margin-caption >
 
-## **Índice**
 1. [Introducción](#introducción)
 2. [Materiales Necesarios](#materiales-necesarios)
 3. [Ensamblaje Mecánico](#ensamblaje-mecánico)
@@ -28,7 +27,7 @@ Este manual describe el ensamblaje y funcionamiento de un brazo robótico cartes
 - Placas de soporte (corte láser o impresas en 3D)
 - Garra Dipper  
 
-### **📷 Colocar imagen de los materiales aquí**
+### <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/42fed2d5a2a253646c96f221bb2d667fc43dafab/Imagenes/imagenm2.jpg" width = 100 height = 100 align =  midle figclass= margin-caption > <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/42fed2d5a2a253646c96f221bb2d667fc43dafab/Imagenes/imagenm1.jpg" width = 100 height = 100 align =  midle figclass= margin-caption > <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/42fed2d5a2a253646c96f221bb2d667fc43dafab/Imagenes/imagenm3.png" width = 100 height = 100 align =  midle figclass= margin-caption > <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/42fed2d5a2a253646c96f221bb2d667fc43dafab/Imagenes/Imagen6.jpg" width = 100 height = 100 align =  midle figclass= margin-caption >
 
 ### **Sistema de Movimiento**
 - Motores NEMA 17 (3 unidades)
@@ -50,21 +49,12 @@ Este manual describe el ensamblaje y funcionamiento de un brazo robótico cartes
 2. Instalar los rodamientos lineales en los ejes X, Y y Z.
 3. Fijar los tornillos sin fin con soportes y rodamientos.
 
-### **📷 Colocar imagen del ensamblaje base aquí**
-
 ### **Paso 2: Montaje de Motores y Tornillos sin Fin**
 1. Fijar cada motor NEMA 17 en su respectivo eje.
 2. Usar acopladores flexibles para conectar los motores.
 
-### **📷 Colocar imagen de los motores instalados aquí**
+## <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/42fed2d5a2a253646c96f221bb2d667fc43dafab/Imagenes/imagenmotoresensamblados.png" width = 300 height = 300 align =  midle figclass= margin-caption >
 
-### **Paso 3: Instalación de la Garra Dipper**
-1. Montar la garra Dipper en el eje Z.
-2. Conectarla a un servo SG90 o MG995.
-
-### **📷 Colocar imagen de la garra instalada aquí**
-
----
 
 ## **4. Conexión Electrónica**
 ### **Motores y Drivers**
@@ -77,7 +67,7 @@ Colocar los switches de límite en los extremos de los ejes.
 - ESP32 principal: Control de motores.
 - ESP32 secundario: Para control remoto (WiFi/Bluetooth).
 
-### **📷 Colocar imagen del esquema de conexiones aquí**
+## <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/5ab720c8cb904e956b9ea857e3e3222fd7963231/Imagenes/plano%20electrico.PNG" width = 300 height = 300 align =  midle figclass= margin-caption >
 
 ---
 
