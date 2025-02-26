@@ -10,16 +10,14 @@
 #define STEP_PIN_3 33
 
 // Credenciales WiFi
-const char* ssid = "J王";         // Reemplaza con el nombre de tu red
-const char* password = "julieswg7"; // Reemplaza con tu contraseña
+const char* ssid = "iPhone de Ariel";         // Reemplaza con el nombre de tu red
+const char* password = "12345678"; // Reemplaza con tu contraseña
 
 // Servidor web en el puerto 80
 WebServer server(80);
 
 // Variables para almacenar los pasos de los motores
 int steps1 = 0, steps2 = 0, steps3 = 0;
-int steps4 = 0, steps5 = 0, steps6 = 0;
-int steps7 = 0, steps8 = 0, steps9 = 0;
 
 void conectarWiFi() {
   Serial.print("Conectando a WiFi...");
@@ -50,43 +48,53 @@ void setup() {
 
   // Página principal del servidor web
   server.on("/", HTTP_GET, []() {
-    String html = "<html><body><h1>Control de Motores</h1>";
-    html += "<p>Ingresa los pasos para mover los motores:</p>";
-    html += "<form action='/girar' method='GET'>";
-    
-    for (int i = 1; i <= 9; i++) {
-      html += "<label>Pasos " + String(i) + ":</label> ";
-      html += "<input type='number' name='steps" + String(i) + "' value='0' required><br>";
-    }
-    
+    String html = "<html><head><style>";
+    html += "body { background-color: #0000FF; color: white; font-family: Arial, sans-serif; text-align: center; }";  // Fondo azul
+    html += ".container { width: 60%; margin: 0 auto; background: #333; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }";
+    html += ".motor-section { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 2px solid #555; padding-bottom: 10px; }";
+    html += ".motor-section label { font-weight: bold; color: #fff; }";
+    html += "input[type='number'] { width: 60px; padding: 5px; font-size: 16px; }";
+    html += "input[type='submit'] { background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }";
+    html += "</style></head><body>";
+    html += "<center><h2>Universidad Central del Ecuador</h2>";
+    html += "<h3>Facultad de Filosofia, Letras y Ciencias de la Educacion</h3>";
+    html += "<h4>Carrera Pedagogia Tecnica de la Mecatronica</h4>";
+    html += "<h4>Subtema: Proyecto de Automatizacion</h4>";
+    html += "<h1>Control de Motores</h1>";
+    html += "<div class='container'><form action='/girar' method='GET'>";
+
+    html += "<div class='motor-section'>";
+    html += "<label for='steps1'>Controlador del Motor 1:</label>";
+    html += "<input type='number' name='steps1' id='steps1' value='0' required>";
+    html += "</div>";
+
+    html += "<div class='motor-section'>";
+    html += "<label for='steps2'>Controlador del Motor 2:</label>";
+    html += "<input type='number' name='steps2' id='steps2' value='0' required>";
+    html += "</div>";
+
+    html += "<div class='motor-section'>";
+    html += "<label for='steps3'>Controlador del Motor 3:</label>";
+    html += "<input type='number' name='steps3' id='steps3' value='0' required>";
+    html += "</div>";
+
     html += "<input type='submit' value='Girar'>";
-    html += "</form></body></html>";
+    html += "</form></div></body></html>";
+    // Enviar respuesta HTML
     server.send(200, "text/html", html);
   });
 
   // Ruta para recibir los valores y mover los motores
   server.on("/girar", HTTP_GET, []() {
-    if (server.args() == 9) {
+    if (server.args() == 3) { // Cambié de 9 a 3, ya que solo usas 3 motores
       steps1 = server.arg("steps1").toInt();
       steps2 = server.arg("steps2").toInt();
       steps3 = server.arg("steps3").toInt();
-      steps4 = server.arg("steps4").toInt();
-      steps5 = server.arg("steps5").toInt();
-      steps6 = server.arg("steps6").toInt();
-      steps7 = server.arg("steps7").toInt();
-      steps8 = server.arg("steps8").toInt();
-      steps9 = server.arg("steps9").toInt();
 
       // Mover los motores
       rotateMotor(DIR_PIN_1, STEP_PIN_1, steps1);
-      rotateMotor(DIR_PIN_1, STEP_PIN_1, steps2);
-      rotateMotor(DIR_PIN_1, STEP_PIN_1, steps3);
-      rotateMotor(DIR_PIN_2, STEP_PIN_2, steps4);
-      rotateMotor(DIR_PIN_2, STEP_PIN_2, steps5);
-      rotateMotor(DIR_PIN_2, STEP_PIN_2, steps6);
-      rotateMotor(DIR_PIN_3, STEP_PIN_3, steps7);
-      rotateMotor(DIR_PIN_3, STEP_PIN_3, steps8);
-      rotateMotor(DIR_PIN_3, STEP_PIN_3, steps9);
+      rotateMotor(DIR_PIN_2, STEP_PIN_2, steps2);
+      rotateMotor(DIR_PIN_3, STEP_PIN_3, steps3);
 
       server.send(200, "text/html", "<html><body><h2>Motores girados correctamente.</h2><a href='/'>Volver</a></body></html>");
     } else {
