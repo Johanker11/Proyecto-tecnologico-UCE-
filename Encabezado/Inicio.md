@@ -1,4 +1,4 @@
-<img src="Imagenes/descarga (1).jpg" width = 70 height = 70 align =  right figclass= margin-caption >  <img src="Imagenes\UCE.jpg" 
+<img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/549f47d37fcd483a36566e6ae948e222ed73342e/Imagenes/descarga%20(1).jpg" width = 70 height = 70 align =  right figclass= margin-caption >  <img src="https://github.com/Johanker11/Proyecto-tecnologico-UCE-/blob/549f47d37fcd483a36566e6ae948e222ed73342e/Imagenes/descarga.jpg" 
 width = 70 height =70 align = left figclass= margin-caption >
 
 #### <center> <span style='color:red'>  *Universiad Central del Ecuador* </span>
